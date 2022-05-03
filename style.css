@@ -1,17 +1,17 @@
-    /* Указываем box sizing */
+    /* change box sizing */
     
     *,
     *::before,
     *::after {
         box-sizing: border-box;
     }
-    /* Убираем внутренние отступы */
+    /* remove outer paddings for list */
     
     ul[class],
     ol[class] {
         padding: 0;
     }
-    /* Убираем внешние отступы */
+    /* remove outer margins */
     
     body,
     h1,
@@ -29,7 +29,7 @@
     dd {
         margin: 0;
     }
-    /* Выставляем основные настройки по-умолчанию для body */
+    /* set main settings for body */
     
     body {
         min-height: 100vh;
@@ -37,29 +37,29 @@
         text-rendering: optimizeSpeed;
         line-height: 1.5;
     }
-    /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+    /* remove styles for ul and li with class*/
     
     ul[class],
     ol[class] {
         list-style: none;
     }
-    /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+    /* set default styles for links */
     
     a:not([class]) {
         text-decoration-skip-ink: auto;
     }
-    /* Упрощаем работу с изображениями */
+    /* improve image styles */
     
     img {
         max-width: 100%;
         display: block;
     }
-    /* Указываем понятную периодичность в потоке данных у article*/
+    /*  set article style (selecting any element immediately after article*/
     
     article>*+* {
         margin-top: 1em;
     }
-    /* Наследуем шрифты для инпутов и кнопок */
+    /* inherit fonts for inputs and buttons */
     
     input,
     button,
@@ -67,7 +67,7 @@
     select {
         font: inherit;
     }
-    /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+    /* remove all animations and transition for people, who doesn't like it */
     
     @media (prefers-reduced-motion: reduce) {
         * {
