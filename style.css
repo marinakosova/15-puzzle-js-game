@@ -1,0 +1,297 @@
+    /* Указываем box sizing */
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    /* Убираем внутренние отступы */
+    
+    ul[class],
+    ol[class] {
+        padding: 0;
+    }
+    /* Убираем внешние отступы */
+    
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ul[class],
+    ol[class],
+    li,
+    figure,
+    figcaption,
+    blockquote,
+    dl,
+    dd {
+        margin: 0;
+    }
+    /* Выставляем основные настройки по-умолчанию для body */
+    
+    body {
+        min-height: 100vh;
+        scroll-behavior: smooth;
+        text-rendering: optimizeSpeed;
+        line-height: 1.5;
+    }
+    /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+    
+    ul[class],
+    ol[class] {
+        list-style: none;
+    }
+    /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+    
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
+    /* Упрощаем работу с изображениями */
+    
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    /* Указываем понятную периодичность в потоке данных у article*/
+    
+    article>*+* {
+        margin-top: 1em;
+    }
+    /* Наследуем шрифты для инпутов и кнопок */
+    
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+    /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+    
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    /* General */
+    
+    body {
+        max-width: 100%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        background: #2980B9;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .game-layout {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    
+    .gem-puzzle-flex {
+        max-width: 100%;
+        width: 30rem;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 5px 5px 5px 8px;
+        background-color: #2980B9;
+        border-radius: 6px;
+    }
+    
+    .gem-puzzle-flex_button {
+        flex-shrink: 1;
+        padding: 3px;
+    }
+    
+    .gem-puzzle-flex_empty {
+        flex-shrink: 1;
+        width: 116px;
+    }
+    
+    .gem-puzzle-flex_button_wide {
+        flex-shrink: 1;
+        padding: 3px;
+    }
+    
+    .gem-puzzle-flex_button button {
+        padding: 30px 45px 30px 45px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, .75);
+        font-size: 2rem;
+        border: 1px solid white;
+        border-radius: 6px;
+        outline: none;
+        transition: border-radius 1s;
+    }
+    
+    .gem-puzzle-flex_button_wide button {
+        padding: 30px 36px 30px 36px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, .75);
+        font-size: 2rem;
+        border: 1px solid white;
+        border-radius: 6px;
+        outline: none;
+        transition: border-radius 1s;
+    }
+    
+    .gem-puzzle-flex_button button:hover {
+        background-color: rgba(255, 255, 255, .9);
+        border-radius: 17px;
+    }
+    
+    .gem-puzzle-flex_button_wide button:hover {
+        background-color: rgba(255, 255, 255, .9);
+        border-radius: 17px;
+    }
+    
+    .gem-puzzle-settings {
+        width: 30rem;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .gem-puzzle-settings_buttons {
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin-bottom: 10px;
+        padding: 10px 0;
+        background-color: #2980B9;
+        border-radius: 6px;
+    }
+    
+    .gem-puzzle-settings_buttons button {
+        cursor: pointer;
+        position: relative;
+        padding: 13px;
+        background-color: rgba(255, 255, 255, .75);
+        font-size: 1rem;
+        border: 1px solid white;
+        border-radius: 6px;
+        outline: none;
+        transition: border-radius 2s;
+    }
+    
+    .gem-puzzle-settings_buttons button:hover {
+        background-color: rgba(255, 255, 255, .9);
+        border-radius: 17px;
+    }
+    
+    .gem-puzzle-settings_score {
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    
+    .gem-puzzle--activatable::after {
+        content: '';
+        top: 21px;
+        right: 3px;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+    }
+    
+    .gem-puzzle--active::after {
+        background: #fb4444;
+    }
+    
+    @media screen and (max-width: 550px) {
+        .gem-puzzle-settings {
+            width: 17rem;
+        }
+        .gem-puzzle-settings_buttons {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-content: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .gem-puzzle-settings_buttons button {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .gem-puzzle-settings_buttons button:last-child {
+            margin-bottom: 0px;
+        }
+        .gem-puzzle-settings_score {
+            text-align: center;
+        }
+        .gem-puzzle--activatable::after {
+            top: 19px;
+            right: 1px;
+        }
+        .gem-puzzle-flex {
+            width: 17rem;
+        }
+        .gem-puzzle-flex_button button {
+            padding: 7px 19px;
+        }
+        .gem-puzzle-flex_button_wide button {
+            padding: 7px 10px;
+        }
+        .gem-puzzle-flex_empty {
+            width: 63px;
+        }
+    }
