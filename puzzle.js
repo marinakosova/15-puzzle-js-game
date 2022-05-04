@@ -26,13 +26,11 @@ class Puzzle {
         }
         //16-th item is null
         this.items[this.size - 1][this.size - 1] = null;
-
-        this.shuffle();
     }
 
     move(number) {
         let directions = [
-            [0, 1],
+            [0, 1], // down
             [1, 0],
             [0, -1],
             [-1, 0]
@@ -50,6 +48,7 @@ class Puzzle {
         for (let i = 0; i < 4; i++) {
             let newCol = col + directions[i][0];
             let newRow = row + directions[i][1];
+            console.log(`${newCol} ${newRow}`);
 
             if (newCol >= 0 &&
                 newRow >= 0 &&
@@ -120,8 +119,8 @@ class Puzzle {
 
     static load() {
         let data = JSON.parse(localStorage.getItem("game"));
-
         if (!data) return null;
+
         let puzzle = new Puzzle(data.size);
         puzzle.items = data.items;
         puzzle.moves = data.moves;

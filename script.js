@@ -88,7 +88,8 @@ function renderPuzzleBlocks(puzzleNumbers, onClickCallback) {
                 }
                 // when button clicked
             blockButton.addEventListener("click", function(e) {
-                let btn = e.toElement;
+                console.log(e);
+                let btn = e.toElement || e.srcElement;
                 let num = Number(btn.dataset.num);
                 performMove(num);
             });
@@ -154,6 +155,7 @@ window.addEventListener("DOMContentLoaded", function() {
             puzzle = newPuzzle;
         } else {
             puzzle = new Puzzle(4);
+            puzzle.shuffle();
         }
 
         puzzle.timerCallback = timerCallback;
